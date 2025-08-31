@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: healthcare-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: healthcare_db
+      MYSQL_USER: healthcare_user
+      MYSQL_PASSWORD: healthcare_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - healthcare-network
+
+  # Spring Boot Application
+  healthcare-backend:
+    build: .
+    container_name: healthcare-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/healthcare_db?useSSL=false&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: healthcare_user
+      SPRING_DATASOURCE_PASSWORD: healthcare_pass
+      JWT_SECRET: your-secret-key-here-make-it-very-long-and-secure-for-production
+      JWT_EXPIRATION: 86400000
+      SPRING_PROFILES_ACTIVE: prod
+    depends_on:
+      - mysql
+    networks:
+      - healthcare-network
+
+  # Optional: phpMyAdmin for database management
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: healthcare-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: healthcare_user
+      PMA_PASSWORD: healthcare_pass
+    depends_on:
+      - mysql
+    networks:
+      - healthcare-network
+
+volumes:
+  mysql_data:
+
+networks:
+  healthcare-network:
+    driver: bridge
