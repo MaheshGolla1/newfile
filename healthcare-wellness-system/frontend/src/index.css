@@ -1,0 +1,566 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Healthcare Theme Colors */
+:root {
+  --primary-green: #28a745;
+  --secondary-green: #20c997;
+  --light-green: #d4edda;
+  --dark-green: #155724;
+  --primary-blue: #007bff;
+  --secondary-blue: #6f42c1;
+  --primary-purple: #6f42c1;
+  --primary-pink: #e83e8c;
+  --primary-orange: #fd7e14;
+  --primary-yellow: #ffc107;
+  --primary-red: #dc3545;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --dark-gray: #343a40;
+  --success-green: #28a745;
+  --warning-yellow: #ffc107;
+  --danger-red: #dc3545;
+  --info-blue: #17a2b8;
+}
+
+.healthcare-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.healthcare-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Green Primary Button */
+.healthcare-btn-primary {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.healthcare-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+  background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 100%);
+  color: white;
+}
+
+.healthcare-btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Secondary Button */
+.healthcare-btn-secondary {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.healthcare-btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+  color: white;
+}
+
+/* Success Button */
+.healthcare-btn-success {
+  background: linear-gradient(135deg, var(--success-green) 0%, var(--secondary-green) 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.healthcare-btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+  color: white;
+}
+
+/* Warning Button */
+.healthcare-btn-warning {
+  background: linear-gradient(135deg, var(--warning-yellow) 0%, var(--primary-orange) 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  color: var(--dark-gray);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.healthcare-btn-warning:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
+  color: var(--dark-gray);
+}
+
+/* Danger Button */
+.healthcare-btn-danger {
+  background: linear-gradient(135deg, var(--danger-red) 0%, var(--primary-pink) 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.healthcare-btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+  color: white;
+}
+
+/* Info Button */
+.healthcare-btn-info {
+  background: linear-gradient(135deg, var(--info-blue) 0%, var(--primary-blue) 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+}
+
+.healthcare-btn-info:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(23, 162, 184, 0.4);
+  color: white;
+}
+
+/* Outline Buttons */
+.healthcare-btn-outline-primary {
+  background: transparent;
+  border: 2px solid var(--primary-green);
+  border-radius: 25px;
+  padding: 10px 28px;
+  font-weight: 600;
+  color: var(--primary-green);
+  transition: all 0.3s ease;
+}
+
+.healthcare-btn-outline-primary:hover {
+  background: var(--primary-green);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+}
+
+.healthcare-btn-outline-secondary {
+  background: transparent;
+  border: 2px solid var(--primary-blue);
+  border-radius: 25px;
+  padding: 10px 28px;
+  font-weight: 600;
+  color: var(--primary-blue);
+  transition: all 0.3s ease;
+}
+
+.healthcare-btn-outline-secondary:hover {
+  background: var(--primary-blue);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+}
+
+.healthcare-navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.healthcare-form {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.healthcare-input {
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.healthcare-input:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.healthcare-dashboard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Colorful Stats Cards */
+.healthcare-stats-card {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  color: white;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.healthcare-stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(40, 167, 69, 0.3);
+}
+
+.healthcare-stats-card-blue {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: white;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.healthcare-stats-card-blue:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 123, 255, 0.3);
+}
+
+.healthcare-stats-card-purple {
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+  color: white;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.healthcare-stats-card-purple:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(111, 66, 193, 0.3);
+}
+
+.healthcare-stats-card-orange {
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--warning-yellow) 100%);
+  color: white;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.healthcare-stats-card-orange:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(253, 126, 20, 0.3);
+}
+
+.healthcare-appointment-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid var(--primary-green);
+  transition: all 0.3s ease;
+}
+
+.healthcare-appointment-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.healthcare-appointment-card.confirmed {
+  border-left-color: var(--success-green);
+}
+
+.healthcare-appointment-card.pending {
+  border-left-color: var(--warning-yellow);
+}
+
+.healthcare-appointment-card.cancelled {
+  border-left-color: var(--danger-red);
+}
+
+.healthcare-service-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.healthcare-service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-green);
+  box-shadow: 0 10px 30px rgba(40, 167, 69, 0.2);
+}
+
+.healthcare-icon {
+  font-size: 2.5rem;
+  color: var(--primary-green);
+  margin-bottom: 15px;
+}
+
+.healthcare-icon-blue {
+  color: var(--primary-blue);
+}
+
+.healthcare-icon-purple {
+  color: var(--primary-purple);
+}
+
+.healthcare-icon-orange {
+  color: var(--primary-orange);
+}
+
+.healthcare-icon-pink {
+  color: var(--primary-pink);
+}
+
+.healthcare-welcome {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.healthcare-welcome h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.healthcare-welcome p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Status Badges */
+.healthcare-badge-success {
+  background: var(--success-green);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.healthcare-badge-warning {
+  background: var(--warning-yellow);
+  color: var(--dark-gray);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.healthcare-badge-danger {
+  background: var(--danger-red);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.healthcare-badge-info {
+  background: var(--info-blue);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Progress Bars */
+.healthcare-progress {
+  background: var(--light-gray);
+  border-radius: 10px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.healthcare-progress-bar {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* Tables */
+.healthcare-table {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.healthcare-table th {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  color: white;
+  border: none;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.healthcare-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.healthcare-table tr:hover {
+  background: var(--light-gray);
+}
+
+/* Alerts */
+.healthcare-alert-success {
+  background: var(--light-green);
+  border: 1px solid var(--success-green);
+  color: var(--dark-green);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.healthcare-alert-warning {
+  background: #fff3cd;
+  border: 1px solid var(--warning-yellow);
+  color: #856404;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.healthcare-alert-danger {
+  background: #f8d7da;
+  border: 1px solid var(--danger-red);
+  color: #721c24;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.healthcare-alert-info {
+  background: #d1ecf1;
+  border: 1px solid var(--info-blue);
+  color: #0c5460;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+/* Loading Spinner */
+.healthcare-spinner {
+  border: 4px solid var(--light-gray);
+  border-top: 4px solid var(--primary-green);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .healthcare-welcome h1 {
+    font-size: 2rem;
+  }
+  
+  .healthcare-welcome p {
+    font-size: 1rem;
+  }
+  
+  .healthcare-dashboard {
+    padding: 20px;
+    margin: 10px 0;
+  }
+  
+  .healthcare-btn-primary,
+  .healthcare-btn-secondary,
+  .healthcare-btn-success,
+  .healthcare-btn-warning,
+  .healthcare-btn-danger,
+  .healthcare-btn-info {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.bounce-in {
+  animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
