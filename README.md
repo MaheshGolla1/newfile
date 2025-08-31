@@ -1,1 +1,0 @@
-wipro day 1
